@@ -1,0 +1,11 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 16
+VisualStudioVersion = 16.0.0.0
+MinimumVisualStudioVersion = 16.0.0.0
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriplanarTest.Windows", "TriplanarTest.Windows\TriplanarTest.Windows.csproj", "{21F5F319-EDBC-4203-9945-9A46E6548E45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriplanarTest", "TriplanarTest\TriplanarTest.csproj", "{BED6CB08-ED05-4333-B81E-C7DABF5B7635}"
+EndProject
+Global
+EndGlobal

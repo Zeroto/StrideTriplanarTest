@@ -1,0 +1,31 @@
+﻿namespace TriPlanarTest
+{
+    shader triplanarDiffuse<float BlendSharpness> : ComputeColor
+    {
+        compose ComputeColor Vertical;
+        compose ComputeColor Horizontal;
+
+        stage stream float2 TexCoord: TEXCOORD0;
+        stage stream float4 PositionWS : POSITION_WS;
+        stage stream float3 normalWS : NORMALWS;
+
+        override float4 Compute()
+        {
+            float2 texCoordXY = streams.PositionWS.xy;
+            float2 texCoordZY = streams.PositionWS.zy;
+            float2 texCoordXZ = streams.PositionWS.xz;
+            streams.TexCoord = texCoordXY;
+            var t1 = Horizontal.Compute();
+            streams.TexCoord = texCoordZY;
+            var t2 = Horizontal.Compute();
+            streams.TexCoord = texCoordXZ;
+            var t3 = Vertical.Compute();
+
+            float3 blendWeights = pow(abs(streams.normalWS), BlendSharpness);
+            blendWeights = blendWeights / (blendWeights.x + blendWeights.y + blendWeights.z); // make sure sum is 1
+
+            return t1*blendWeights.z + t2*blendWeights.x + t3*blendWeights.y;
+            //return float4(0, 1, 0, 1);
+        }
+    };
+}

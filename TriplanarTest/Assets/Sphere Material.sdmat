@@ -1,0 +1,41 @@
+!MaterialAsset
+Id: a47409ad-e510-4dc3-9ce2-7d47874abca3
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Attributes:
+    MicroSurface: !MaterialGlossinessMapFeature
+        GlossinessMap: !ComputeFloat
+            Value: 0.65
+    Diffuse: !MaterialDiffuseMapFeature
+        DiffuseMap: !ComputeShaderClassColor
+            MixinReference: triplanarDiffuse
+            Generics:
+                c903edb82b84b2911ccca889d1b03bd2~BlendSharpness: !ComputeColorParameterFloat
+                    Value: 10.0
+            CompositionNodes:
+                76061fb89043d3880f6c7510e97dcb3e~Vertical: !ComputeTextureColor
+                    Texture: f9a1390e-0808-4a76-ad2f-896f74c7caf8:Textures/wood_table_tex_ColB_2
+                    FallbackValue:
+                        Value: {R: 1.0, G: 1.0, B: 1.0, A: 1.0}
+                    Scale: {X: 1.0, Y: 1.0}
+                    Offset: {X: 0.0, Y: 0.0}
+                    Swizzle: null
+                070c02f92239cda88a7c695b0d81c42d~Horizontal: !ComputeTextureColor
+                    Texture: 3549db6f-3a53-4c69-b882-5b6c72bdcf74:Textures/CheckerGrid1x1
+                    FallbackValue:
+                        Value: {R: 1.0, G: 1.0, B: 1.0, A: 1.0}
+                    Scale: {X: 1.0, Y: 1.0}
+                    Offset: {X: 0.0, Y: 0.0}
+                    Swizzle: null
+    DiffuseModel: !MaterialDiffuseLambertModelFeature {}
+    Specular: !MaterialMetalnessMapFeature
+        MetalnessMap: !ComputeFloat
+            Value: 1.0
+    SpecularModel: !MaterialSpecularMicrofacetModelFeature
+        Fresnel: !MaterialSpecularMicrofacetFresnelSchlick {}
+        Visibility: !MaterialSpecularMicrofacetVisibilitySmithSchlickGGX {}
+        NormalDistribution: !MaterialSpecularMicrofacetNormalDistributionGGX {}
+        Environment: !MaterialSpecularMicrofacetEnvironmentGGXLUT {}
+    Overrides:
+        UVScale: {X: 1.0, Y: 1.0}
+Layers: {}

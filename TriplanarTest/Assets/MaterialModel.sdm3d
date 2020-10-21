@@ -1,0 +1,19 @@
+!Model
+Id: d6eb9b8a-c70a-4d55-8da5-9dc32528d6bd
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file ../Resources/Models/MaterialModel.fbx
+Skeleton: null
+PivotPosition: {X: 0.0, Y: 0.0, Z: 0.0}
+Materials:
+    ebc0cfec026ffd470b819cfcb1ca2cbf:
+        Name: MaterialA
+        MaterialInstance:
+            Material: a47409ad-e510-4dc3-9ce2-7d47874abca3:Sphere Material
+    07d84ca53b7823d8fcdf7c46dab24576:
+        Name: MaterialB
+        MaterialInstance:
+            Material: a47409ad-e510-4dc3-9ce2-7d47874abca3:Sphere Material
+Modifiers: {}
+~SourceHashes:
+    ebe1c6db7d0e3084a763fb1c4396c769~../Resources/Models/MaterialModel.fbx: 2af68f6f63000a4c8b6f9af14e7d0962
